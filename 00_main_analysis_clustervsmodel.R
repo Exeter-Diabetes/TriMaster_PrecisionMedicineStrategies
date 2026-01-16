@@ -655,7 +655,13 @@ source(paste0(additional_code, "/Figure3.R"))
 
 source(paste0(additional_code, "/FigureS3.R"))
 
+Figure3_model <- lmer(hba1c_diff ~ group_model + period + (1 | study_id), data = data_analysis_model)
+confint(Figure3_model)
 
+Figure3_cluster <- lmer(hba1c_diff ~ group_cluster + period + (1 | study_id), data = data_analysis_cluster)
+confint(Figure3_cluster)
+
+                                                            
 #--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 # Figure S4: Results of prediction model  --------------------------------------
 #--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
@@ -678,4 +684,5 @@ source(paste0(additional_code, "/FigureS5.R"))
 
 
 source(paste0(additional_code, "/TableS4.R"))
+
 
